@@ -20,3 +20,6 @@ syn keyword htmlArg contained ng-required ng-min-length ng-max-length
 
 " input[number]
 syn keyword htmlArg contained min max
+
+" select
+syn keyword htmlArg contained ng-options
