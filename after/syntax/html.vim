@@ -1,25 +1,60 @@
 setlocal iskeyword+=-
 
-" check http://docs.angularjs.org/api/
-syn keyword htmlArg contained ng-app ng-bind ng-bind-html-unsafe
-      \ ng-bind-template ng-change ng-checked ng-class ng-class-even
-      \ ng-class-odd ng-click ng-cloak ng-controller ng-csp ng-dblclick
-      \ ng-disabled ng-form ng-hide ng-href ng-include ng-init
-      \ ng-keydown ng-keypress ng-keyup ng-list ng-model
-      \ ng-mousedown ng-mouseenter ng-mouseleave ng-mousemove
-      \ ng-mouseover ng-mouseup ng-multiple ng-non-bindable
-      \ ng-pluralize ng-readonly ng-repeat ng-selected ng-show
-      \ ng-src ng-style ng-submit ng-switch ng-transclude ng-view
+let s:angularDirectives = join([
+      \ "app",
+      \ "animate",
+      \ "bind",
+      \ "bind-html-unsafe",
+      \ "bind-template",
+      \ "change",
+      \ "checked",
+      \ "class",
+      \ "class-even",
+      \ "class-odd",
+      \ "click",
+      \ "cloak",
+      \ "controller",
+      \ "csp",
+      \ "dblclick",
+      \ "disabled",
+      \ "false-value",
+      \ "form",
+      \ "hide",
+      \ "href",
+      \ "include",
+      \ "init",
+      \ "keydown",
+      \ "keypress",
+      \ "keyup",
+      \ "list",
+      \ "max-length",
+      \ "min-length",
+      \ "model",
+      \ "mousedown",
+      \ "mouseenter",
+      \ "mouseleave",
+      \ "mousemove",
+      \ "mouseover",
+      \ "mouseup",
+      \ "multiple",
+      \ "non-bindable",
+      \ "options",
+      \ "pattern",
+      \ "pluralize",
+      \ "readonly",
+      \ "repeat",
+      \ "required",
+      \ "selected",
+      \ "show",
+      \ "src",
+      \ "style",
+      \ "submit",
+      \ "switch",
+      \ "transclude",
+      \ "true-value",
+      \ "view"
+      \ ], "\\|")
 
-" input[checkbox]
-syn keyword htmlArg contained ng-true-value ng-false-value
+exec 'syntax match htmlArg contained "\<\(\(x\|data\)-\)\?ng-\('. s:angularDirectives .'\)\>"'
 
-" input[email]
-syn keyword htmlArg contained ng-required ng-min-length ng-max-length
-      \ ng-pattern required
-
-" input[number]
-syn keyword htmlArg contained min max
-
-" select
-syn keyword htmlArg contained ng-options
+syntax keyword htmlArg contained required min max
