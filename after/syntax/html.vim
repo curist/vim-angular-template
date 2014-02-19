@@ -47,12 +47,18 @@ let s:angularDirectives = join([
       \ "selected",
       \ "show",
       \ "src",
+      \ "srcset",
       \ "style",
       \ "submit",
       \ "switch",
       \ "transclude",
       \ "true-value",
-      \ "view"
+      \ "view",
+      \ "focus",
+      \ "blur",
+      \ "copy",
+      \ "cut",
+      \ "paste",
       \ ], "\\|")
 
 exec 'syntax match htmlArg contained "\<\(\(x\|data\)-\)\?ng-\('. s:angularDirectives .'\)\>"'
