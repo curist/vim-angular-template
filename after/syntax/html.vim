@@ -43,6 +43,8 @@ let s:angularDirectives = join([
       \ "pluralize",
       \ "readonly",
       \ "repeat",
+      \ "repeat-start",
+      \ "repeat-end",
       \ "required",
       \ "selected",
       \ "show",
