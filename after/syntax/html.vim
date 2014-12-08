@@ -1,5 +1,3 @@
-setlocal iskeyword+=-
-
 let s:angularDirectives = join([
       \ "app",
       \ "animate",
@@ -67,3 +65,6 @@ let s:angularDirectives = join([
 exec 'syntax match htmlArg contained "\<\(\(x\|data\)-\)\?ng-\('. s:angularDirectives .'\)\>"'
 
 syntax keyword htmlArg contained required min max
+
+syntax include @jsExpression syntax/javascript.vim
+syntax region jsExpression matchgroup=Delimiter start="{{" end="}}" keepend contains=@jsExpression
